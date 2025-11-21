@@ -1,0 +1,143 @@
+.question-card {
+  background: white;
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.question-card.locked {
+  opacity: 0.75;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+}
+
+.question-text {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.option-button {
+  padding: 18px 24px;
+  text-align: left;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #334155;
+  font-weight: 500;
+}
+
+.option-button:hover:not(:disabled) {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  transform: translateX(6px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.option-button.selected {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+  color: black;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+  transform: translateX(4px);
+}
+
+.option-button.selected:active,
+.option-button.selected:focus {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+  color: white;
+  outline: none;
+}
+
+.option-button:active:not(.selected) {
+  background: #f1f5f9;
+  transform: translateX(2px);
+}
+
+.option-button:focus {
+  outline: none;
+}
+
+.option-button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.locked-message {
+  margin-top: 25px;
+  padding: 18px;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #991b1b;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  border: 2px solid #fecaca;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .question-card {
+    padding: 20px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .question-text {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  
+  .options {
+    gap: 12px;
+  }
+  
+  .option-button {
+    padding: 16px 18px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+    border-width: 2px;
+  }
+
+  .option-button:hover:not(:disabled) {
+    transform: translateX(3px);
+  }
+
+  .option-button.selected {
+    transform: translateX(2px);
+  }
+
+  .locked-message {
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+}
