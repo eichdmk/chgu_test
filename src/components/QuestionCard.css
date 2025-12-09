@@ -51,9 +51,36 @@
 .option-button.selected {
   border-color: #3b82f6;
   background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
-  color: black;
+  color: white;
   font-weight: 600;
   box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+  transform: translateX(4px);
+}
+
+.option-button.correct {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+  transform: translateX(4px);
+}
+
+.option-button.incorrect {
+  border-color: #ef4444;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+  transform: translateX(4px);
+}
+
+.option-button.correct-not-selected {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
   transform: translateX(4px);
 }
 
@@ -96,6 +123,45 @@
   font-size: 1rem;
 }
 
+.feedback-message {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.feedback-message.correct-feedback {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+  border: 2px solid #10b981;
+}
+
+.feedback-message.incorrect-feedback {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #991b1b;
+  border: 2px solid #ef4444;
+}
+
+.feedback-icon {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .question-card {
     padding: 20px 16px;
@@ -130,9 +196,12 @@
     transform: translateX(3px);
   }
 
-  .option-button.selected {
-    transform: translateX(2px);
-  }
+.option-button.selected,
+.option-button.correct,
+.option-button.incorrect,
+.option-button.correct-not-selected {
+  transform: translateX(2px);
+}
 
   .locked-message {
     margin-top: 20px;

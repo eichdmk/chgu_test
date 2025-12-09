@@ -191,6 +191,7 @@ function TestPage() {
           selectedAnswer={answers[currentQuestionIndex]}
           onAnswerSelect={handleAnswerSelect}
           isLocked={isQuestionLocked || lockedQuestions.has(currentQuestionIndex)}
+          correctAnswer={currentQuestion.correctAnswer}
         />
 
         <div className="navigation-buttons">
